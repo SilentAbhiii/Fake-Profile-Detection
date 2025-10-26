@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake Profile Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Fake Profile Detection in Social Networks</h2>
+    <form action="/predict" method="post">
+      <input type="number" name="username_length" placeholder="Username Length" required>
+      <input type="number" name="num_followers" placeholder="Number of Followers" required>
+      <input type="number" name="num_following" placeholder="Number of Following" required>
+      <input type="number" name="num_posts" placeholder="Number of Posts" required>
+      <input type="number" name="account_age_days" placeholder="Account Age (Days)" required>
+      <input type="number" name="bio_length" placeholder="Bio Length" required>
+      <select name="profile_pic" required>
+        <option value="1">Has Profile Picture</option>
+        <option value="0">No Profile Picture</option>
+      </select>
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
